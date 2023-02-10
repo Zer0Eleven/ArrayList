@@ -1,4 +1,5 @@
 local font = Enum.Font.SciFi
+local color = Color3.fromRGB(59, 170, 222)
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)
 arrayFrame.Size = UDim2.new(0.13, 0, 1, 0)
@@ -35,10 +36,8 @@ Arraylist = {
         local size = game:GetService("TextService"):GetTextSize(newName, TextScale, font, Vector2.new(1000000, 1000000))
         Text.TextXAlignment = "Right"
         Text.LayoutOrder = -size.X
-	    Text.TextColor3 = Color3.fromRGB(59, 170, 222)
-	    Text.TextStrokeTransparency = 0
-        task.spawn(function()
-        end)
+	Text.TextColor3 = color
+        Text.TextStrokeTransparency = 0
     end,
     Remove = function(Name)
         if arrayFrame:FindFirstChild(Name) then
@@ -48,7 +47,7 @@ Arraylist = {
     Color = function(red, green, blue)
       local Text = arrayFrame:GetChildren()
       
-      Text.TextColor3 = Color3.fromRGB(red, green, blue)
+      color = Color3.fromRGB(red, green, blue)
     end,
     Font = function(EnumFont)
       font = EnumFont

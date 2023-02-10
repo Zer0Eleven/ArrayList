@@ -28,7 +28,7 @@ Arraylist = {
 	
 	if goingDown == false then
 	   while k <= 255 do
-	      Text.TextColor3 = Color3.fromRGB(k, k, k)
+	      Text.TextColor3 = Color3.new(k, k, k)
 	
 	      k + k + add
 				
@@ -40,7 +40,7 @@ Arraylist = {
 	   end
 	else
 	   while k <= 255 then
-	      Text.TextColor3 = Color3.fromRGB(k, k, k)
+	      Text.TextColor3 = Color3.new(k, k, k)
 	
 	      k + k - add
 	      if k = 0 then
@@ -70,7 +70,7 @@ Arraylist = {
         local size = game:GetService("TextService"):GetTextSize(newName, TextScale, font, Vector2.new(1000000, 1000000))
         Text.TextXAlignment = "Right"
         Text.LayoutOrder = -size.X
-	    Text.TextColor3 = Color3.fromRGB(59, 170, 222)
+	    Text.TextColor3 = Color3.new(59, 170, 222)
 	    Text.TextStrokeTransparency = 0
         task.spawn(function()
             repeat
@@ -83,6 +83,11 @@ Arraylist = {
         if arrayFrame:FindFirstChild(Name) then
             arrayFrame:FindFirstChild(Name):Destroy()
         end
+    end,
+    Color = function(red, green, blue)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextColor3 = Color3.new(red/255, green/255, blue/255)
     end,
     Font = function(EnumFont)
       font = EnumFont

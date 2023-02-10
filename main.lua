@@ -28,7 +28,7 @@ Arraylist = {
 	
 	if goingDown == false then
 	   while k <= 255 do
-	      Text.TextColor3 = Color3.new(k, k, k)
+	      Text.TextColor3 = Color3.new(k/255, k/255, k/255)
 	
 	      k + k + add
 				
@@ -40,7 +40,7 @@ Arraylist = {
 	   end
 	else
 	   while k <= 255 then
-	      Text.TextColor3 = Color3.new(k, k, k)
+	      Text.TextColor3 = Color3.new(k/255, k/255, k/255)
 	
 	      k + k - add
 	      if k = 0 then
@@ -70,7 +70,7 @@ Arraylist = {
         local size = game:GetService("TextService"):GetTextSize(newName, TextScale, font, Vector2.new(1000000, 1000000))
         Text.TextXAlignment = "Right"
         Text.LayoutOrder = -size.X
-	    Text.TextColor3 = Color3.new(59, 170, 222)
+	    Text.TextColor3 = Color3.new(59/255, 170/255, 222/255)
 	    Text.TextStrokeTransparency = 0
         task.spawn(function()
             repeat

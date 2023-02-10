@@ -1,5 +1,6 @@
 
 
+local font = Enum.Font.Ubuntu
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)
 arrayFrame.Size = UDim2.new(0.13, 0, 1, 0)
@@ -29,11 +30,11 @@ Arraylist = {
         Text.Name = Name
         Text.BackgroundTransparency = 1
         Text.Size = UDim2.new(0,0,1,0)
-        Text.Font = Enum.Font.Ubuntu
+        Text.Font = font
         local TextScale = Text.AbsoluteSize.Y * 0.7
         Text.TextSize = TextScale
         Text.Text = newName.." "
-        local size = game:GetService("TextService"):GetTextSize(newName, TextScale, Enum.Font.Gotham, Vector2.new(1000000, 1000000))
+        local size = game:GetService("TextService"):GetTextSize(newName, TextScale, font, Vector2.new(1000000, 1000000))
         Text.TextXAlignment = "Right"
         Text.LayoutOrder = -size.X
 	    Text.TextColor3 = Color3.fromRGB(59, 170, 222)
@@ -56,7 +57,7 @@ Arraylist = {
       Text.TextColor3 = Color3.fromRGB(red, green, blue)
     end,
     Font = function(EnumFont)
-      local font = EnumFont
+      font = EnumFont
       local Text = arrayFrame:GetChildren()
 
       

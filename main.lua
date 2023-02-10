@@ -64,7 +64,7 @@ Arraylist = {
           Text.Font = font
 	        print("Font has been found (Font: "..EnumFont")")
       else
-        print("Font not found, make sure it is a font supported by Roblox.")
+        print("Font not found, make sure it is a font supported by Roblox. (Attempted Font: "..EnumFont")")
       end
     end,
     Rainbow = function()

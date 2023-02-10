@@ -1,5 +1,6 @@
 
 
+_G.RainbowEnabled = true
 local font = Enum.Font.SciFi
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)
@@ -19,8 +20,15 @@ task.spawn(function()
 end)
 
 Arraylist = {
+    ToggleRainbow = function()
+       if not _G.RainbowEnabled then
+	  _G.RainbowEnabled = true
+	else
+	  _G.RainbowEnabled = false
+       end
+    end
     Rainbow = function()
-	task.spawn(function()
+	task.spawn(function(bool)
 	local Text = arrayFrame:GetChildren()
 	local goingDown = false
 	local add = 1
@@ -73,10 +81,12 @@ Arraylist = {
 	    Text.TextColor3 = Color3.fromRGB(59, 170, 222)
 	    Text.TextStrokeTransparency = 0
         task.spawn(function()
+	    if _G.RainbowEnabled == true then
             repeat
                 task.wait()
-                Text.TextColor3 = array.Rainbow()
+		array.Rainbow()
             until not Text
+	    end
         end)
     end,
     Remove = function(Name)

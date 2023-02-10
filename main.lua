@@ -1,6 +1,6 @@
 
 
-local font = Enum.Font.Ubuntu
+local font = Enum.Font.SciFi
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)
 arrayFrame.Size = UDim2.new(0.13, 0, 1, 0)
@@ -20,6 +20,7 @@ end)
 
 Arraylist = {
     Rainbow = function()
+	task.spawn(function()
 	local Text = arrayFrame:GetChildren()
 	local goingDown = false
 	local add = 1
@@ -49,6 +50,7 @@ Arraylist = {
 	      task.wait()
 	   end
 	end
+	end)
     end,
     Add = function(Name, Suffix)
         local Text = Instance.new("TextLabel",arrayFrame)

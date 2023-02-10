@@ -1,56 +1,4 @@
-function rainbow()
-    local add = 10
-    wait(1)
-    local k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(k/255,0/255,0/255)
-    k = k + add
-    wait()
-    end
-    while true do
-    k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(255/255,k/255,0/255)
-    k = k + add
-    wait()
-    end
-    k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
-    k = k + add
-    wait()
-    end
-    k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(0/255,255/255,k/255)
-    k = k + add
-    wait()
-    end
-    k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
-    k = k + add
-    wait()
-    end
-    k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(k/255,0/255,255/255)
-    k = k + add
-    wait()
-    end
-    k = 1
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
-    k = k + add
-    wait()
-    end
-    while k <= 255 do
-    Text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
-    k = k + add
-    wait()
-    end
-    end
-end
+
 
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)
@@ -118,6 +66,37 @@ Arraylist = {
       else
         print("Font not found, make sure it is a font supported by Roblox.")
       end
+    end,
+    Rainbow = function()
+	local Text = arrayFrame:GetChildren()
+	local goingDown = false
+	local add = 1
+	local k = 0
+	
+	if goingDown == false then
+	   while k <= 255 do
+	      Text.TextColor3 = Color3.fromRGB(k, k, k)
+	
+	      k + k + add
+				
+	      if k = 255 then
+		 goingDown = true
+	      end
+				
+	      task.wait()
+	   end
+	else
+	   while k <= 255 then
+	      Text.TextColor3 = Color3.fromRGB(k, k, k)
+	
+	      k + k - add
+	      if k = 0 then
+		   goingDown = false
+	      end
+			
+	      task.wait()
+	   end
+	end
     end,
 }
 

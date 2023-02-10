@@ -1,5 +1,3 @@
-
-
 _G.RainbowEnabled = false
 local font = Enum.Font.SciFi
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
@@ -21,44 +19,42 @@ end)
 
 Arraylist = {
     ToggleRainbow = function()
-       if not _G.RainbowEnabled then
-	  _G.RainbowEnabled = true
-	else
-	  _G.RainbowEnabled = false
-       end
-    end
+    	if not _G.RainbowEnabled then
+	  		_G.RainbowEnabled = true
+		else
+	  		_G.RainbowEnabled = false
+   		end
+	end,
     Rainbow = function()
-	task.spawn(function(bool)
-	local Text = arrayFrame:GetChildren()
-	local goingDown = false
-	local add = 1
-	local k = 0
+		local Text = arrayFrame:GetChildren()
+		local goingDown = false
+		local add = 1
+		local k = 0
 	
-	if goingDown == false then
-	   while k <= 255 do
-	      Text.TextColor3 = Color3.fromRGB(k, k, k)
-	
-	      k = k + add
+		if goingDown == false then
+	  		while k <= 255 do
+	     		Text.TextColor3 = Color3.fromRGB(k, k, k)
+
+	 	   	 	k = k + add
+
+	 	    	if k == 255 then
+			 		goingDown = true
+	 	     	end
 				
-	      if k = 255 then
-		 goingDown = true
-	      end
-				
-	      task.wait()
-	   end
-	else
-	   while k <= 255 then
-	      Text.TextColor3 = Color3.fromRGB(k, k, k)
-	
-	      k = k - add
-	      if k = 0 then
-		   goingDown = false
-	      end
+	     		task.wait()
+	   		end
+		else
+			while k <= 255 do
+	     	  Text.TextColor3 = Color3.fromRGB(k, k, k)
+
+			  k = k - add
+	 		  if k == 0 then
+				 goingDown = false
+			  end
 			
-	      task.wait()
-	   end
-	end
-	end)
+	   	      task.wait()
+	  	   end
+		end
     end,
     Add = function(Name, Suffix)
         local Text = Instance.new("TextLabel",arrayFrame)

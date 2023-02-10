@@ -42,7 +42,7 @@ Arraylist = {
 	   while k <= 255 then
 	      Text.TextColor3 = Color3.fromRGB(k, k, k)
 	
-	      k + k - add
+	      k = k - add
 	      if k = 0 then
 		   goingDown = false
 	      end

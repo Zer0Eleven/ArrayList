@@ -14,61 +14,12 @@ Grid.HorizontalAlignment = "Left"
 
 task.spawn(function()
     while task.wait(1) do
-        array.Enabled = shared["CometConfigs"].Enabled
+        array.Enabled = true
      end
 end)
 
 Arraylist = {
-    Add = function(Name,Suffix)
-        local Text = Instance.new("TextLabel",arrayFrame)
-        local newName
-        if Suffix then
-			newName = Name.." [" ..Suffix .. "]"
-        else
-            newName = Name
-        end
-        Text.Name = Name
-        Text.BackgroundTransparency = 1
-        Text.Size = UDim2.new(0,0,1,0)
-        Text.Font = font
-        local TextScale = Text.AbsoluteSize.Y * 0.7
-        Text.TextSize = TextScale
-        Text.Text = newName.." "
-        local size = game:GetService("TextService"):GetTextSize(newName, TextScale, font, Vector2.new(1000000, 1000000))
-        Text.TextXAlignment = "Right"
-        Text.LayoutOrder = -size.X
-	    Text.TextColor3 = Color3.fromRGB(59, 170, 222)
-	    Text.TextStrokeTransparency = 0
-        task.spawn(function()
-            repeat
-                task.wait()
-                Text.TextColor3 = rainbow()
-            until not Text
-        end)
-    end,
-    Remove = function(Name)
-        if arrayFrame:FindFirstChild(Name) then
-            arrayFrame:FindFirstChild(Name):Destroy()
-        end
-    end,
-    Color = function(red, green, blue)
-      local Text = arrayFrame:GetChildren()
-      
-      Text.TextColor3 = Color3.fromRGB(red, green, blue)
-    end,
-    Font = function(EnumFont)
-      font = EnumFont
-      local Text = arrayFrame:GetChildren()
-
-      
-      if font then
-          Text.Font = font
-	        print("Font has been found (Font: "..EnumFont")")
-      else
-        print("Font not found, make sure it is a font supported by Roblox. (Attempted Font: "..EnumFont")")
-      end
-    end,
-        Rainbow = function()
+    Rainbow = function()
 	local Text = arrayFrame:GetChildren()
 	local goingDown = false
 	local add = 1
@@ -98,6 +49,55 @@ Arraylist = {
 	      task.wait()
 	   end
 	end
+    end,
+    Add = function(Name, Suffix)
+        local Text = Instance.new("TextLabel",arrayFrame)
+        local newName
+        if Suffix then
+			newName = Name.." ["..Suffix .."]"
+        else
+            newName = Name
+        end
+        Text.Name = Name
+        Text.BackgroundTransparency = 1
+        Text.Size = UDim2.new(0,0,1,0)
+        Text.Font = font
+        local TextScale = Text.AbsoluteSize.Y * 0.7
+        Text.TextSize = TextScale
+        Text.Text = newName.." "
+        local size = game:GetService("TextService"):GetTextSize(newName, TextScale, font, Vector2.new(1000000, 1000000))
+        Text.TextXAlignment = "Right"
+        Text.LayoutOrder = -size.X
+	    Text.TextColor3 = Color3.fromRGB(59, 170, 222)
+	    Text.TextStrokeTransparency = 0
+        task.spawn(function()
+            repeat
+                task.wait()
+                Text.TextColor3 = array.Rainbow()
+            until not Text
+        end)
+    end,
+    Remove = function(Name)
+        if arrayFrame:FindFirstChild(Name) then
+            arrayFrame:FindFirstChild(Name):Destroy()
+        end
+    end,
+    Color = function(red, green, blue)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextColor3 = Color3.fromRGB(red, green, blue)
+    end,
+    Font = function(EnumFont)
+      font = EnumFont
+      local Text = arrayFrame:GetChildren()
+
+      
+      if font then
+          Text.Font = font
+	        print("Font has been found (Font: "..EnumFont")")
+      else
+        print("Font not found, make sure it is a font supported by Roblox. (Attempted Font: "..EnumFont")")
+      end
     end,
 }
 

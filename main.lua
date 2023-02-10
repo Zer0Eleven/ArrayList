@@ -1,6 +1,6 @@
 
 
-_G.RainbowEnabled = true
+_G.RainbowEnabled = false
 local font = Enum.Font.SciFi
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)

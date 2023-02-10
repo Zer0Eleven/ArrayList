@@ -89,18 +89,6 @@ Arraylist = {
       
       Text.TextColor3 = Color3.fromRGB(red, green, blue)
     end,
-    Font = function(EnumFont)
-      font = EnumFont
-      local Text = arrayFrame:GetChildren()
-
-      
-      if font then
-          Text.Font = font
-	        print("Font has been found (Font: "..EnumFont")")
-      else
-        print("Font not found, make sure it is a font supported by Roblox. (Attempted Font: "..EnumFont")")
-      end
-    end,
 }
 
 

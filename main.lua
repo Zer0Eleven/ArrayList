@@ -67,37 +67,6 @@ Arraylist = {
         print("Font not found, make sure it is a font supported by Roblox. (Attempted Font: "..EnumFont")")
       end
     end,
-    Rainbow = function()
-	local Text = arrayFrame:GetChildren()
-	local goingDown = false
-	local add = 1
-	local k = 0
-	
-	if goingDown == false then
-	   while k <= 255 do
-	      Text.TextColor3 = Color3.fromRGB(k, k, k)
-	
-	      k + k + add
-				
-	      if k = 255 then
-		 goingDown = true
-	      end
-				
-	      task.wait()
-	   end
-	else
-	   while k <= 255 then
-	      Text.TextColor3 = Color3.fromRGB(k, k, k)
-	
-	      k + k - add
-	      if k = 0 then
-		   goingDown = false
-	      end
-			
-	      task.wait()
-	   end
-	end
-    end,
 }
 
 

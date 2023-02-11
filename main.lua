@@ -13,7 +13,7 @@ Grid.HorizontalAlignment = "Left"
 
 task.spawn(function()
     while task.wait(1) do
-        array.Enabled = true
+        array.Enabled = shared["MoonArray"].Enabled
      end
 end)
 

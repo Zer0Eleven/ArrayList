@@ -76,6 +76,16 @@ Arraylist = {
       
       Text.TextStrokeTransparency = Transparency
     end,
+    TextStrokeColor = function(red, green, blue)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextStrokeColor3 = Color3.fromRGB(red, green, blue)
+    end,
+    TextSize = function(TextSize)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextSize = TextSize
+    end,
 }
 
 

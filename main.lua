@@ -1,4 +1,4 @@
-local font = Enum.Font.SciFi
+local font = Enum.Font.Ubuntu
 local color = Color3.fromRGB(59, 170, 222)
 local array = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local arrayFrame = Instance.new("Frame", array)

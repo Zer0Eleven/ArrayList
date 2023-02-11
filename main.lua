@@ -81,11 +81,6 @@ Arraylist = {
       
       Text.TextStrokeColor3 = Color3.fromRGB(red, green, blue)
     end,
-    TextSize = function(TextSize)
-      local Text = arrayFrame:GetChildren()
-      
-      Text.TextSize = TextSize
-    end,
 }
 
 

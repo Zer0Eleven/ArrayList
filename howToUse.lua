@@ -9,26 +9,61 @@
   local array = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zer0Eleven/ArrayList/main/main.lua"))()
 
   
-2. Adding stuff
+2. Functions
   
-  There are 4 functions, array.Add, array.Remove, array.Color, and array.Font. First, use array.Add to add an item!
-
-  heres how to use array.Add:
+  There are 8 functions, array.Add, array.Remove, array.Color, and array.Font, array.TextSize, array.TextTransparency, array.TextStrokeTransparency, and array.TextStrokeColor.
   
-  array.Add("Speed", "CFrame")
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  Second, use array.Remove to remove an item! (Make sure that you've used array.Add to add the item you want to remove
+  First, use array.Add to add an item!
+  
+  Example: array.Add("Speed", "CFrame")
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  Second, use array.Remove to remove an item! (Make sure that you've used array.Add to add the item you want to remove)
 
   Example: array.Remove("Speed")
   
-  Third, use array.Color to set the color of the array to whatever you want (RGB), You can also use array.Color to make your own rainbow array!
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  Third, use array.Color to set the color of the array text to whatever you want (RGB), You can also use array.Color to make your own rainbow array!
 
   Example: array.Color(255, 255, 255)
   
-  Fourth, use array.Font to set the font of the array! (Make sure its a font supported by Roblox)
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  Fourth, use array.Font to set the font of the array text! (Make sure its a font supported by Roblox)
 
   Example: array.Font(Enum.Font.Ubuntu)
 
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  Fith, use array.TextSize to set the size of the array text!
+
+  Example: array.TextSize(25)
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  Sixth, use array.TextTransparency to set the transparency of the array text!
+
+  Example: array.TextTransparency(0.7)
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  Seventh, use array.TextStrokeTransparency to set the transparency of the array text stroke! (Text outline)
+
+  Example: array.TextStrokeTransparency(1)
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  Eighth, use array.TextStrokeColor to set the color of the array text stroke! (Text outline) (RGB)
+
+  Example: array.TextStrokeColor(255, 255, 255)
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  
 ]]--
 
 --[[ Credits to whoever made the original library that I edited on ]]--

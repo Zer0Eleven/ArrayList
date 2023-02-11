@@ -61,6 +61,21 @@ Arraylist = {
         print("Font not found, make sure it is a font supported by Roblox. (Attempted Font: "..EnumFont")")
       end
     end,
+    TextSize = function(TextSize)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextSize = TextSize
+    end,
+    TextTransparency = function(Transparency)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextTransparency = Transparency
+    end,
+    TextStrokeTransparency = function(Transparency)
+      local Text = arrayFrame:GetChildren()
+      
+      Text.TextStrokeTransparency = Transparency
+    end,
 }
 
 
